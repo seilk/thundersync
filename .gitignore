@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+
+# Agent instruction files never enter this repository
+AGENTS.md
+CLAUDE.md
+CLAUDE.local.md
+GEMINI.md
+CODEX.md
+.cursorrules
+.windsurfrules
+.clinerules
+.github/copilot-instructions.md
+.agents/
+.cursor/
+.gemini/
+.windsurf/
+.aider*
+
+# Runtime state
+assets/
+models/
+datasets/
+.cache/
+udocker/
+udocker-store/
+sandbox/
+campaigns/
+results/
+artifacts/
+checkpoints/
+telemetry/
+logs/
+*.log
+*.out
+*.pid
+
+# OS
+.DS_Store

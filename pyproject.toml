@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thundersync"
+dynamic = ["version"]
+description = "Streaming backward execution for GRPO and on-policy distillation of language-model agents."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Seil Kang" }]
+requires-python = ">=3.12"
+keywords = ["reinforcement learning", "GRPO", "on-policy distillation", "language model agents", "pytorch"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+# install torch to match your CUDA stack first
+dependencies = ["torch>=2.11", "transformers>=5.14,<5.15"]
+
+[project.urls]
+Homepage = "https://seilk.github.io/thundersync"
+Repository = "https://github.com/seilk/thundersync"
+Paper = "https://arxiv.org/abs/2610.05935"
+
+[project.optional-dependencies]
+train = ["peft", "safetensors"]
+kernels = ["triton", "flash-linear-attention", "nvidia-cudnn-frontend"]
+rollout = ["vllm"]
+test = ["pytest"]
+
+[tool.setuptools.dynamic]
+version = { attr = "thundersync.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["thundersync*"]
+
+[tool.setuptools.package-data]
+thundersync = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["F"]

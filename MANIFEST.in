@@ -1,0 +1,11 @@
+recursive-include examples *.py
+recursive-include tests *.py
+include SECURITY.md CONTRIBUTING.md
+global-exclude AGENTS.md CLAUDE.md CLAUDE.local.md GEMINI.md CODEX.md
+global-exclude .cursorrules .windsurfrules .clinerules .aider.conf.yml copilot-instructions.md
+global-exclude */.agents/* */.cursor/* */.gemini/* */.windsurf/* */.aider/*
+prune .agents
+prune .cursor
+prune .gemini
+prune .windsurf
+prune .aider
